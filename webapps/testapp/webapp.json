@@ -29,28 +29,6 @@
             "label": "Dataset",
             "description": "",
             "mandatory": true
-        },
-        {
-            "name": "input_column",
-            "type": "DATASET_COLUMN",
-            "datasetParamName": "input_dataset",
-            "label": "Column",
-            "description": "",
-            "mandatory": true
-        },
-        {
-            "name": "input_int",
-            "type": "INT",
-            "label": "Int",
-            "description": "",
-            "mandatory": true
-        },
-        {
-            "name": "input_string",
-            "type": "STRING",
-            "label": "String",
-            "description": "",
-            "mandatory": false
         }
     ],
 

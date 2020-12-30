@@ -2,22 +2,22 @@
 // For example, for a parameter called "input_dataset"
 // input_dataset = dataiku.getWebAppConfig()['input_dataset']
 
-
 function modifyText(event) {
-  console.log(document.getElementById("parameter-name").value);
+  let formData = new FormData(document.getElementById('form-sample'));
+  let data = new URLSearchParams(formData);
   let headers = new Headers();
   let init = {
-        method : 'GET',
-        headers : headers};
+        method : 'POST',
+        headers : headers,
+        body: data};
+
   let url = getWebAppBackendUrl('/post_parameter');
-  
+  let promise = fetch(url, init) 
+  .then(function(response){ 
+      console.log(response);
+  });
   event.preventDefault();
 }
 
 const el = document.getElementById("Submit");
 el.addEventListener("click", function (event) {modifyText(event)}, false);
-$.getJSON(getWebAppBackendUrl('/first_api_call'), function(data) {
-    console.log('Received data from backend', data)
-    const output = $('<pre />').text('Backend reply: ' + JSON.stringify(data));
-    $('body').append(output)
-});
