@@ -22,11 +22,11 @@ from dataiku.customrecipe import *
 # To  retrieve the datasets of an input role named 'input_A' as an array of dataset names:
 input_A_names = get_input_names_for_role('input_A_role')
 # The dataset objects themselves can then be created like this:
-input_A_datasets = [dataiku.Dataset(name) for name in input_A_names]
+input_A_datasets = dataiku.Dataset(input_A_names[0]) 
 
 # For outputs, the process is the same:
 output_A_names = get_output_names_for_role('main_output')
-output_A_datasets = [dataiku.Dataset(name) for name in output_A_names]
+output_A_datasets = dataiku.Dataset(output_A_names[0])
 
 
 # The configuration consists of the parameters set up by the user in the recipe Settings tab.
@@ -57,8 +57,7 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 # Read recipe inputs
-fake_hubspot_export = dataiku.Dataset("fake_hubspot_export")
-fake_hubspot_export_df = fake_hubspot_export.get_dataframe()
+input_A_datasets = fake_hubspot_export.get_dataframe()
 
 
 # Compute recipe outputs from inputs
@@ -69,5 +68,4 @@ fake_hubspot_export_copy_df = fake_hubspot_export_df # For this sample code, sim
 
 
 # Write recipe outputs
-fake_hubspot_export_copy = dataiku.Dataset("fake_hubspot_export_copy")
-fake_hubspot_export_copy.write_with_schema(fake_hubspot_export_copy_df)
+output_A_datasets.write_with_schema(fake_hubspot_export_copy_df)
