@@ -57,7 +57,7 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 # Read recipe inputs
-input_A_datasets = fake_hubspot_export.get_dataframe()
+fake_hubspot_export_df = input_A_datasets.get_dataframe()
 
 
 # Compute recipe outputs from inputs
