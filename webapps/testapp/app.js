@@ -14,8 +14,17 @@ function modifyText(event) {
   let url = getWebAppBackendUrl('/post_parameter');
   let promise = fetch(url, init) 
   .then(function(response){ 
-      console.log(response);
-  });
+      return response.json();
+    }).then(function(data){
+      if (data.status === "created"){
+        document.getElementById("message").innerHTML = "The recipe was created";
+      } else if (data.status === "updated"){
+        document.getElementById("message").innerHTML = "The recipe was updated";
+      } else if (data.status === "error"){
+        document.getElementById("message").innerHTML = data.error;
+      }
+    })    
+  
   event.preventDefault();
 }
 
