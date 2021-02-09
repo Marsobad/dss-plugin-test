@@ -3,7 +3,7 @@
 
 	"custom" : [
 		{
-			"name" : "Install dependencies for dummy plugin"
+			"name" : "Run a dummy python script to install a test plugin"
 		}
 	],
 
