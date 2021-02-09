@@ -1,0 +1,17 @@
+{
+  "actions": [
+    {
+      "ts": 1612868052452,
+      "action": "INSTALLED_DEPS_CUSTOM",
+      "user": "user1"
+    },
+    {
+      "ts": 1612868292838,
+      "action": "INSTALLED_DEPS_CUSTOM",
+      "user": "user1"
+    }
+  ],
+  "gitState": {
+    "enabled": false
+  }
+}

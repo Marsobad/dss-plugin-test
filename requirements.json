@@ -1,0 +1,11 @@
+{
+	"installScript" : "install.sh",
+
+	"custom" : [
+		{
+			"name" : "Install dependencies for dummy plugin"
+		}
+	],
+
+	"disclaimer" : "This installation procedure runs a Python script to install some dependencies. \nYour server needs Internet access to run this."
+}

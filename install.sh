@@ -9,4 +9,8 @@ detectedDistrib=$($DKUINSTALLDIR/scripts/_find-distrib.sh)
 distrib=`echo "$detectedDistrib"|cut -d ' ' -f 1`
 echo "$distrib"
 echo "Done"
+
+python2 setup.py install
+#$DIP_HOME/bin/python setup.py
+#$DIP_HOME/bin/python "print(1)"
 #$DIP_HOME/bin/python setup.py install
